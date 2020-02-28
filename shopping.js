@@ -8,9 +8,12 @@ const user = {
   }
  cartItem(user);
  buyItem(user);
- // refunds(user);
+ refunds(user);
  console.log('my cart', user.cart);
  console.log('my buys', user.purchases);
+ Object.keys(user).forEach(e => {
+   console.log(e);
+ });
 }
   function cartItem (user) {
      let item = [
@@ -43,12 +46,11 @@ const user = {
   }
  cart();
  
-  // function refunds(user) {
-  //   let user = user;
-  //   let refund = {refunds: []};
-  //   user.push(refund);
-    
-  // }
+  function refunds(refunduser) {
+    let user = refunduser;
+    let refund = Object.assign(user, {refund: []});
+    return refund;
+  }
   //Implement a cart feature:
   // 1. Add items to cart.
   // 2. Add 3% tax to item in cart
